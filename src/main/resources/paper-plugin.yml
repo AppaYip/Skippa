@@ -1,0 +1,16 @@
+name: Skippa
+prefix: SKI
+version: '${version}'
+
+main: org.appa.skippa.Skippa
+api-version: '26.3'
+load: STARTUP
+
+authors: [ Appa ]
+
+dependencies:
+    server:
+        Skript:
+            load: BEFORE
+            required: true
+            join-classpath: true
