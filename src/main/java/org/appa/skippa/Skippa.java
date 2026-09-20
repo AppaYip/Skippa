@@ -11,14 +11,22 @@ import org.skriptlang.skript.util.ClassLoader;
 import java.lang.reflect.InvocationTargetException;
 
 public final class Skippa extends JavaPlugin implements AddonModule {
+    static Skippa plugin;
+
+    public static Skippa getInstance() {
+        return plugin;
+    }
 
     @Override
     public void onEnable() {
+        plugin = this;
+
         SkriptAddon addon = Skript.instance().registerAddon(Skippa.class, "Skippa");
         addon.localizer().setSourceDirectories("lang", null);
         addon.loadModules(this);
-    }
 
+        getComponentLogger().info("Skippa has loaded successfully!");
+    }
 
 
     @Override
