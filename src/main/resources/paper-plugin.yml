@@ -4,7 +4,6 @@ version: '${version}'
 
 main: org.appa.skippa.Skippa
 api-version: '26.3'
-load: STARTUP
 
 authors: [ Appa ]
 
