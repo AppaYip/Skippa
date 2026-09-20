@@ -64,6 +64,6 @@ public class EffDistinct extends Effect {
 
     @Override
     public String toString(@Nullable Event event, boolean debug) {
-        return "make" + objects.toString(event, debug) + "distinct";
+        return "make " + objects.toString(event, debug) + " distinct";
     }
 }
