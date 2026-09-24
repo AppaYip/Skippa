@@ -2,7 +2,7 @@ name: Skippa
 prefix: SKI
 version: '${version}'
 
-main: org.appa.skippa.Skippa
+main: io.github.AppaYip.skippa.Skippa
 api-version: '26.3'
 
 authors: [ Appa ]

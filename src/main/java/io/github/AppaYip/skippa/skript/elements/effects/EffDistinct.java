@@ -1,4 +1,4 @@
-package org.appa.skippa.skript.elements.effects;
+package io.github.AppaYip.skippa.skript.elements.effects;
 
 import ch.njol.skript.classes.Changer;
 import ch.njol.skript.doc.Description;
@@ -17,7 +17,10 @@ import org.skriptlang.skript.registration.SyntaxRegistry;
 import java.util.Arrays;
 
 @Name("Distinct")
-@Description({"Removes the duplicate values out of a variable."})
+@Description({
+        "Removes the duplicate values out of a variable.",
+        "This modifies the list."
+})
 @Example("""
         on script load:
             set {_t::*} to 1, 2, 2, 3, 3

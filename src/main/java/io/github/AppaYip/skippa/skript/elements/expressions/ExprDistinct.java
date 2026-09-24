@@ -1,4 +1,4 @@
-package org.appa.skippa.skript.elements.expressions;
+package io.github.AppaYip.skippa.skript.elements.expressions;
 
 import ch.njol.skript.doc.Description;
 import ch.njol.skript.doc.Example;
@@ -17,7 +17,10 @@ import org.skriptlang.skript.registration.SyntaxRegistry;
 import java.util.Arrays;
 
 @Name("Distinct")
-@Description({"Returns the values of an expression with duplicate values removed."})
+@Description({
+        "Returns the values of an expression with duplicate values removed.",
+        "This does not modify the original list."
+})
 @Example("""
        on script load:
            set {_t::*} to (all integers between 0 and 5)

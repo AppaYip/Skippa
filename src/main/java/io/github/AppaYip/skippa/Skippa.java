@@ -1,4 +1,4 @@
-package org.appa.skippa;
+package io.github.AppaYip.skippa;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.SyntaxElement;
@@ -32,7 +32,7 @@ public final class Skippa extends JavaPlugin implements AddonModule {
     @Override
     public void load(SkriptAddon addon) {
         ClassLoader.builder()
-                .basePackage("org.appa.skippa.skript.elements")
+                .basePackage("io.github.AppaYip.skippa.skript.elements")
                 .deep(true)
                 .initialize(true)
                 .forEachClass(clazz -> {
