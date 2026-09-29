@@ -2,6 +2,7 @@ package io.github.AppaYip.skippa;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.SyntaxElement;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.skriptlang.skript.addon.AddonModule;
 import org.skriptlang.skript.addon.SkriptAddon;
@@ -21,6 +22,13 @@ public final class Skippa extends JavaPlugin implements AddonModule {
     public void onEnable() {
         plugin = this;
 
+        if (Skript.isAcceptRegistrations()) {
+            getComponentLogger().error("Skript is not accepting registrations, addons cannot be loaded!");
+            getComponentLogger().error("Disabling plugin...");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+        
         SkriptAddon addon = Skript.instance().registerAddon(Skippa.class, "Skippa");
         addon.localizer().setSourceDirectories("lang", null);
         addon.loadModules(this);
