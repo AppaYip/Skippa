@@ -2,6 +2,7 @@ package io.github.AppaYip.skippa;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.SyntaxElement;
+import io.github.AppaYip.skippa.skript.elements.functions.Test;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.skriptlang.skript.addon.AddonModule;
 import org.skriptlang.skript.addon.SkriptAddon;
@@ -24,6 +25,8 @@ public final class Skippa extends JavaPlugin implements AddonModule {
         SkriptAddon addon = Skript.instance().registerAddon(Skippa.class, "Skippa");
         addon.localizer().setSourceDirectories("lang", null);
         addon.loadModules(this);
+
+        new Test(addon);
 
         getComponentLogger().info("Skippa has loaded successfully!");
     }
